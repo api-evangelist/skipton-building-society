@@ -1,0 +1,109 @@
+aid: skipton-building-society
+name: Skipton Building Society
+review:
+  question: Does Skipton Building Society publish a public developer portal or live UK Open Banking (Open Data / Read-Write) API surface?
+  answer: false
+  date: '2026-07-23'
+  reviewer: API Evangelist
+findings:
+  summary: |
+    Skipton Building Society is a UK mutual building society (founded 1853,
+    fourth-largest in the UK, PRA-authorised and FCA/PRA-regulated) whose core
+    business is retail savings and residential mortgages. It does NOT offer
+    personal current accounts and therefore has minimal ASPSP obligations under
+    PSD2 / UK Open Banking. Within Open Banking, Skipton has historically acted
+    as a CONSUMER of Open Banking data (notably via Experian's Open Banking
+    service for mortgage-affordability verification) rather than as an
+    account-servicing payment service provider publishing a developer platform.
+
+    No public developer / Open Banking portal was found: developer.skipton.co.uk
+    does not resolve, and there is no skipton.co.uk Open Banking or Developer
+    page. api.skipton.co.uk resolves but returns a generic Apache "403 Forbidden"
+    on every probed path (root, /open-banking/v3.1/atms, /open-banking/v2.3/atms,
+    /open-banking/v3.1/branches, /.well-known/open-banking-configuration) - this
+    is a WAF/host block, not a documented API gateway, and NO live Open Data
+    endpoint (HTTP 200 + JSON) could be confirmed. Skipton is absent from the
+    curated public UK Open Banking API listings (postman-toolboxes
+    open-banking-uk-public, openbankingtracker), which cover the CMA9 plus other
+    publishing banks and building societies (e.g. Nationwide) but not Skipton.
+
+    The apis[] entries in apis.yml therefore represent the SHARED OBIE STANDARD
+    (Open Data + Read/Write AIS/PIS/CBPII) that Skipton would conform to if it
+    published these surfaces, explicitly labelled unverified. The single
+    harvested OpenAPI (openapi/obie-opendata-openapi.json) is the OBIE Open Data
+    standard Swagger, NOT a Skipton-proprietary contract.
+  authModel:
+    openData: Public / unauthenticated (OBIE Open Data standard) - unverified for Skipton
+    readWrite: FAPI-grade OAuth2/OIDC + mutual-TLS + PSD2 SCA + OBIE/eIDAS certificates (OBIE Read/Write standard) - unverified for Skipton
+  transports:
+  - protocol: REST
+    scheme: https
+    host: api.skipton.co.uk
+    documented: false
+    note: Host resolves but returns a generic Apache 403 Forbidden on all probed paths; not a documented API gateway. No Open Data JSON confirmed.
+  - protocol: REST
+    scheme: https
+    note: OBIE Open Data standard REST surface (branches, ATMs, personal/business current accounts, unsecured SME loans, commercial credit cards) - represented as the shared standard, no confirmed Skipton host.
+    documented: standard-only
+  probes:
+  - url: https://developer.skipton.co.uk/
+    status: '000'
+    note: Does not resolve - no developer portal.
+  - url: https://api.skipton.co.uk/
+    status: '403'
+    note: Generic Apache 403 Forbidden (WAF/host block).
+  - url: https://api.skipton.co.uk/open-banking/v3.1/atms
+    status: '403'
+    note: Generic Apache 403 Forbidden - no Open Data confirmed.
+  - url: https://api.skipton.co.uk/open-banking/v2.3/atms
+    status: '403'
+    note: Generic Apache 403 Forbidden.
+  - url: https://api.skipton.co.uk/.well-known/open-banking-configuration
+    status: '403'
+    note: Generic Apache 403 Forbidden - no well-known OB configuration.
+  - url: https://www.skipton.co.uk/.well-known/security.txt
+    status: '404'
+    note: No security.txt.
+  - url: https://www.skipton.co.uk/
+    status: '200'
+    note: Corporate website (savings, mortgages, financial advice).
+  - url: https://www.skipton.co.uk/help-and-support/branch-finder
+    status: '200'
+    note: Consumer branch/ATM finder (HTML), not an Open Data API.
+  specProvenance:
+    harvested:
+    - path: openapi/obie-opendata-openapi.json
+      source: https://raw.githubusercontent.com/OpenBankingUK/opendata-api-spec-compiled/master/opendata-swagger.json
+      kind: OBIE-standard
+      swagger: '2.0'
+      version: v1.3
+      note: Shared OpenBankingUK Open Data standard specification, harvested verbatim. NOT a Skipton-proprietary API contract.
+    proprietaryHarvested: false
+sources:
+- url: https://www.skipton.co.uk/
+  type: Website
+  note: Skipton corporate site; footer confirms /about-us, /privacy-policy, /legal-notice, /press-office.
+- url: https://en.wikipedia.org/wiki/Skipton_Building_Society
+  type: Reference
+  note: Founded 1853; fourth-largest UK building society; mutual; part of Skipton Group.
+- url: https://diginomica.com/skipton-building-society-apis-help-blend-old-new-give-customers-choice
+  type: Reference
+  note: Skipton's API-focused technology estate; Open Banking used for mortgage affordability (consumer/TPP side).
+- url: https://postman-toolboxes.github.io/open-banking-uk-public/
+  type: Reference
+  note: Curated public UK Open Banking API list - Skipton is NOT listed among publishing ASPSPs.
+- url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+  type: Standard
+  note: Source of the harvested OBIE Open Data standard Swagger.
+- url: https://github.com/OpenBankingUK/read-write-api-specs
+  type: Standard
+  note: OBIE Read/Write (AIS/PIS/CBPII) standard specifications.
+actions:
+  apisYmlUpdated: true
+  classification: built-stub
+  reason: |
+    Identity captured from real verified sources; no proprietary Skipton API
+    surface exists to harvest. Open Banking is represented at the shared OBIE
+    standard level (one harvested Open Data standard spec) and flagged unverified
+    for Skipton, since no developer portal exists and no live Open Data endpoint
+    returned HTTP 200.

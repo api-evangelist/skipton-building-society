@@ -1,0 +1,149 @@
+aid: skipton-building-society
+url: https://raw.githubusercontent.com/api-evangelist/skipton-building-society/refs/heads/main/apis.yml
+name: Skipton Building Society
+kind: company
+description: >-
+  Skipton Building Society is a UK mutual building society founded in 1853 and
+  headquartered in Skipton, North Yorkshire. It is the fourth-largest building
+  society in the United Kingdom, owned by and run for the benefit of its members
+  rather than shareholders, and is the parent of the wider Skipton Group (which
+  includes the Connells estate-agency group and Skipton International). Skipton
+  is authorised by the Prudential Regulation Authority (PRA) and regulated by
+  the Financial Conduct Authority (FCA) and PRA, and is a member of the Building
+  Societies Association. Its core business is retail savings and residential
+  mortgages together with financial advice; it does not offer personal current
+  accounts. Within UK Open Banking (PSD2 / OBIE) Skipton has historically acted
+  as a consumer of Open Banking data - notably using Experian's Open Banking
+  service to verify mortgage-affordability from applicant bank data - rather than
+  as an account-servicing payment service provider (ASPSP) publishing a public
+  developer platform. As of this profile Skipton exposes no public developer
+  portal and is not listed among the CMA9 or the wider set of banks and building
+  societies that publish live UK Open Banking Open Data or Read/Write APIs; the
+  Open Banking API entries below are represented as the shared OBIE standard the
+  society would conform to if it published these surfaces, and are explicitly
+  unverified for Skipton.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: No public developer portal identified
+  confidence: low
+  source:
+  - manual-research
+  generated: '2026-07-23'
+  method: manual
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Financial Services
+- Banking
+- Building Society
+- Open Banking
+- PSD2
+- OBIE
+- United Kingdom
+- Mortgages
+- Savings
+- Account Information
+- Payments
+created: '2026-07-23'
+modified: '2026-07-23'
+specificationVersion: '0.19'
+apis:
+- aid: skipton-building-society:skipton-open-data-api
+  name: Skipton Open Banking Open Data API (OBIE Standard)
+  description: >-
+    UK Open Banking Open Data standard - public, unauthenticated reference data
+    (branches, ATMs, personal and business current accounts, unsecured SME loans,
+    commercial credit cards) as defined by the OBIE Open Data API specification.
+    Represented here as the shared OBIE standard; a live Skipton Open Data host
+    was NOT confirmed (see review.yml).
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  tags:
+  - Open Data
+  - Branches
+  - ATMs
+  properties:
+  - type: OpenAPI
+    url: openapi/obie-opendata-openapi.json
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+- aid: skipton-building-society:skipton-account-information-api
+  name: Skipton Account & Transaction Information API (OBIE Read/Write Standard)
+  description: >-
+    Account and Transaction Information Services (AIS) as defined by the OBIE
+    Read/Write API Standard - FAPI-secured (OAuth2/OIDC, mutual-TLS, PSD2 strong
+    customer authentication). Represented here as the shared OBIE standard;
+    Skipton ASPSP publication is unverified (see review.yml).
+  humanURL: https://openbankinguk.github.io/read-write-api-site3/
+  tags:
+  - Account Information
+  - AISP
+  properties:
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: skipton-building-society:skipton-payment-initiation-api
+  name: Skipton Payment Initiation API (OBIE Read/Write Standard)
+  description: >-
+    Payment Initiation Services (PIS) as defined by the OBIE Read/Write API
+    Standard - FAPI-secured (OAuth2/OIDC, mutual-TLS, PSD2 SCA). Represented
+    here as the shared OBIE standard; Skipton ASPSP publication is unverified
+    (see review.yml).
+  humanURL: https://openbankinguk.github.io/read-write-api-site3/
+  tags:
+  - Payment Initiation
+  - PISP
+  properties:
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: skipton-building-society:skipton-confirmation-of-funds-api
+  name: Skipton Confirmation of Funds API (OBIE Read/Write Standard)
+  description: >-
+    Confirmation of Funds Services (CBPII) as defined by the OBIE Read/Write API
+    Standard - FAPI-secured (OAuth2/OIDC, mutual-TLS, PSD2 SCA). Represented here
+    as the shared OBIE standard; Skipton ASPSP publication is unverified (see
+    review.yml).
+  humanURL: https://openbankinguk.github.io/read-write-api-site3/
+  tags:
+  - Confirmation of Funds
+  - CBPII
+  properties:
+  - type: Documentation
+    url: https://openbankinguk.github.io/read-write-api-site3/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/read-write-api-specs
+common:
+- type: Website
+  url: https://www.skipton.co.uk/
+- type: About
+  url: https://www.skipton.co.uk/about-us
+- type: BranchLocator
+  url: https://www.skipton.co.uk/help-and-support/branch-finder
+- type: Support
+  url: https://www.skipton.co.uk/help-and-support/contact-us
+- type: Security
+  url: https://www.skipton.co.uk/help-and-support/fraud-and-security
+- type: Blog
+  url: https://www.skipton.co.uk/press-office
+- type: TermsOfService
+  url: https://www.skipton.co.uk/legal-notice
+- type: PrivacyPolicy
+  url: https://www.skipton.co.uk/privacy-policy
+- type: LinkedIn
+  url: https://www.linkedin.com/company/skipton-building-society
+- type: Standard
+  name: OBIE Open Data API Specification
+  url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+- type: Standard
+  name: OBIE Read/Write API Specification
+  url: https://github.com/OpenBankingUK/read-write-api-specs
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
