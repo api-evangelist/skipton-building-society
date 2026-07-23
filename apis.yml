@@ -120,6 +120,8 @@ apis:
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
 common:
+- type: DomainSecurity
+  url: security/skipton-building-society-domain-security.yml
 - type: Website
   url: https://www.skipton.co.uk/
 - type: About
@@ -144,6 +146,20 @@ common:
 - type: Standard
   name: OBIE Read/Write API Specification
   url: https://github.com/OpenBankingUK/read-write-api-specs
+- type: Authentication
+  url: authentication/skipton-building-society-authentication.yml
+- type: Conformance
+  url: conformance/skipton-building-society-conformance.yml
+- type: ErrorCatalog
+  url: errors/skipton-building-society-problem-types.yml
+- type: Conventions
+  url: conventions/skipton-building-society-conventions.yml
+- type: WellKnown
+  url: well-known/skipton-building-society-well-known.yml
+- type: LLMsTxt
+  url: llms/skipton-building-society-llms.txt
+- type: Overlay
+  url: overlays/skipton-building-society-obie-opendata-overlay.yaml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

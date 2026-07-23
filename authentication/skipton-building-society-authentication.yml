@@ -1,0 +1,32 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-opendata-openapi.json + review.yml authModel
+note: >-
+  Derived from the shared OBIE standard the apis[] entries represent; Skipton
+  publishes no proprietary developer platform, so this is the standard auth model,
+  unverified for Skipton (see review.yml).
+summary:
+  types: []
+  api_key_in: []
+  oauth2_flows: []
+surfaces:
+- surface: Open Data (OBIE Open Data standard)
+  spec: openapi/obie-opendata-openapi.json
+  model: none
+  authenticated: false
+  detail: >-
+    The Open Data specification declares no securityDefinitions. Open Data
+    (branches, ATMs, product reference data) is public and unauthenticated by
+    design.
+- surface: Read/Write AIS/PIS/CBPII (OBIE Read/Write standard)
+  spec: null
+  model: fapi-oauth2-oidc-mtls
+  authenticated: true
+  standard_only: true
+  detail: >-
+    The OBIE Read/Write standard mandates FAPI-grade security: OAuth2 authorization
+    code flow, OpenID Connect, mutual-TLS with OBIE/eIDAS certificates, and PSD2
+    strong customer authentication. No Skipton Read/Write specification was found;
+    this reflects the standard, not a confirmed Skipton surface.
+  reference: https://openbankinguk.github.io/read-write-api-site3/
+schemes: []

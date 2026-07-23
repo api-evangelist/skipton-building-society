@@ -1,0 +1,38 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-opendata-openapi.json
+note: >-
+  Standards asserted from the shared OBIE Open Data standard spec harvested into
+  this repo, NOT a confirmed Skipton-proprietary contract. Skipton publishes no
+  live Open Data host (see review.yml).
+standards:
+- id: obie-open-data-v1.3
+  conforms: true
+  evidence: >-
+    Spec is the OpenBankingUK Open Data API standard v1.3 (branches, ATMs, PCA,
+    BCA, unsecured SME loans, commercial credit cards) with the OBIE vendor media
+    type application/prs.openbanking.opendata.v1.3+json.
+- id: oauth2
+  conforms: false
+  evidence: Open Data is public/unauthenticated; no securityDefinitions declared.
+- id: fapi
+  conforms: false
+  evidence: >-
+    FAPI applies to the OBIE Read/Write surface (AIS/PIS/CBPII), for which no
+    Skipton spec exists; the Open Data spec is unauthenticated.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: >-
+    Error responses use the OBIE Open Data error shape (meta + custom error body),
+    not application/problem+json.
+- id: rfc7232-conditional-requests
+  conforms: true
+  evidence: >-
+    Operations accept If-Modified-Since / If-None-Match and return Etag +
+    Cache-Control for conditional GETs.
+- id: rate-limiting
+  conforms: true
+  evidence: Declares a 429 "requested too often" response across all operations.
+- id: hsts
+  conforms: true
+  evidence: Every response advertises the Strict-Transport-Security header.

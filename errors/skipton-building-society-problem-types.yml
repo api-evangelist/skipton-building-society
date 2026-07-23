@@ -1,0 +1,32 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-opendata-openapi.json
+format: obie-open-data
+note: >-
+  Derived from the 4xx/5xx responses declared across every operation of the shared
+  OBIE Open Data standard spec. Not RFC 9457; the Open Data error body is the OBIE
+  meta+error shape. Applies to all six Open Data resources (branches, ATMs, PCA,
+  BCA, unsecured SME loans, commercial credit cards). Unverified for Skipton.
+envelope:
+  media_type: application/prs.openbanking.opendata.v1.3+json
+  shape: meta object + error detail
+problems:
+- status: 400
+  title: Bad request
+  detail: You have sent a request which could not be understood.
+- status: 408
+  title: Request timeout
+  detail: Your client has failed to submit a request, and a timeout has occurred.
+- status: 429
+  title: Too many requests
+  detail: You have requested this resource too often. Slow down.
+  remediation: Back off and retry; the resource is rate limited.
+- status: 500
+  title: Internal server error
+  detail: An error occurred on the server. No further information is available.
+- status: 503
+  title: Service unavailable
+  detail: The service is temporarily unavailable.
+- status: default
+  title: Standard error response
+  detail: A standard error response.

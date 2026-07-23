@@ -1,0 +1,39 @@
+generated: '2026-07-23'
+method: derived
+source: openapi/obie-opendata-openapi.json
+note: >-
+  Cross-cutting request/response semantics derived from the shared OBIE Open Data
+  standard spec in this repo (read-only, unauthenticated reference data). Unverified
+  for Skipton, which publishes no live Open Data host (see review.yml).
+authentication: none (public Open Data)
+idempotency:
+  supported: false
+  reason: Read-only API (GET/HEAD only); no state-changing operations.
+pagination:
+  style: none-declared
+  note: >-
+    Responses carry a meta object with TotalResults; no cursor/offset paging
+    parameters are declared in the Open Data standard.
+conditional_requests:
+  supported: true
+  request_headers: [If-Modified-Since, If-None-Match]
+  response_headers: [Etag, Cache-Control]
+  standard: RFC 7232
+versioning:
+  scheme: media-type + uri-path
+  media_type: application/prs.openbanking.opendata.v1.3+json
+  current: v1.3
+rate_limiting:
+  signaled: true
+  mechanism: 429 "requested too often" response
+  headers_declared: false
+error_envelope:
+  media_type: application/prs.openbanking.opendata.v1.3+json
+  shape: meta object + error detail
+  ref: errors/skipton-building-society-problem-types.yml
+security_headers:
+  declared: [Strict-Transport-Security, X-Frame-Options, X-Content-Type-Options]
+cross_links:
+  errors: errors/skipton-building-society-problem-types.yml
+  authentication: authentication/skipton-building-society-authentication.yml
+  conformance: conformance/skipton-building-society-conformance.yml

@@ -1,0 +1,29 @@
+generated: '2026-07-23'
+method: searched
+source: live probes of Skipton hosts
+note: >-
+  Skipton exposes no public developer platform. The corporate host was probed for
+  the standard discovery surface; every path returned 404. The API host
+  (api.skipton.co.uk) returns a generic Apache 403 on all paths (WAF/host block),
+  so no anonymous discovery document is retrievable there either. Absence is the
+  expected, valid result for a society that acts as an Open Banking consumer, not
+  an ASPSP.
+host: https://www.skipton.co.uk
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /.well-known/open-banking-configuration
+  status: 404
+api_host: https://api.skipton.co.uk
+api_host_documents:
+- path: /.well-known/open-banking-configuration
+  status: 403
+  note: Generic Apache 403 Forbidden (WAF/host block); not a documented discovery endpoint.

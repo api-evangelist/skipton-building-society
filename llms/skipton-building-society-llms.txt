@@ -1,0 +1,23 @@
+# Skipton Building Society
+
+> Skipton Building Society is a UK mutual building society (founded 1853, fourth-largest in the UK), owned by and run for its members, whose core business is retail savings and residential mortgages with financial advice. It is authorised by the PRA and regulated by the FCA/PRA. Skipton does not offer personal current accounts and, within UK Open Banking, has acted as a CONSUMER of Open Banking data (e.g. Experian's service for mortgage-affordability checks) rather than as an account-servicing payment service provider (ASPSP) publishing a developer platform. No public Skipton developer portal or live Open Banking API host was confirmed. The API entries below represent the shared OBIE standards Skipton would conform to if it published these surfaces, and are explicitly unverified for Skipton (see review.yml).
+
+## APIs (OBIE standards — unverified for Skipton)
+- [Open Banking Open Data API (OBIE Standard)](https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/): Public, unauthenticated reference data — branches, ATMs, personal/business current accounts, unsecured SME loans, commercial credit cards.
+- [Account & Transaction Information API (OBIE Read/Write)](https://openbankinguk.github.io/read-write-api-site3/): AIS — FAPI-secured (OAuth2/OIDC, mutual-TLS, PSD2 SCA).
+- [Payment Initiation API (OBIE Read/Write)](https://openbankinguk.github.io/read-write-api-site3/): PIS — FAPI-secured.
+- [Confirmation of Funds API (OBIE Read/Write)](https://openbankinguk.github.io/read-write-api-site3/): CBPII — FAPI-secured.
+
+## Specs
+- [OBIE Open Data standard spec (harvested)](https://raw.githubusercontent.com/api-evangelist/skipton-building-society/refs/heads/main/openapi/obie-opendata-openapi.json): Swagger 2.0, OBIE Open Data API v1.3.
+
+## Standards
+- [OBIE Open Data API Specification](https://github.com/OpenBankingUK/opendata-api-spec-compiled)
+- [OBIE Read/Write API Specification](https://github.com/OpenBankingUK/read-write-api-specs)
+
+## Docs
+- [Skipton website](https://www.skipton.co.uk/)
+- [About Skipton](https://www.skipton.co.uk/about-us)
+- [Branch finder](https://www.skipton.co.uk/help-and-support/branch-finder)
+- [Support / contact](https://www.skipton.co.uk/help-and-support/contact-us)
+- [Fraud and security](https://www.skipton.co.uk/help-and-support/fraud-and-security)
