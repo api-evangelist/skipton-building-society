@@ -63,33 +63,12 @@ created: '2026-07-23'
 modified: '2026-07-23'
 specificationVersion: '0.23'
 apis:
-- aid: skipton-building-society:skipton-open-data-api
-  name: Skipton Open Banking Open Data API (OBIE Standard)
-  description: >-
-    UK Open Banking Open Data standard - public, unauthenticated reference data
-    (branches, ATMs, personal and business current accounts, unsecured SME loans,
-    commercial credit cards) as defined by the OBIE Open Data API specification.
-    Represented here as the shared OBIE standard; a live Skipton Open Data host
-    was NOT confirmed (see review.yml).
-  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
-  tags:
-  - Open Data
-  - Branches
-  - ATMs
-  properties:
-  - type: OpenAPI
-    url: openapi/obie-opendata-openapi.json
-  - type: Documentation
-    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
-  - type: APIReference
-    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
 - aid: skipton-building-society:skipton-account-information-api
   name: Skipton Account & Transaction Information API (OBIE Read/Write Standard)
   description: >-
-    Account and Transaction Information Services (AIS) as defined by the OBIE
-    Read/Write API Standard - FAPI-secured (OAuth2/OIDC, mutual-TLS, PSD2 strong
-    customer authentication). Represented here as the shared OBIE standard;
-    Skipton ASPSP publication is unverified (see review.yml).
+    Account and Transaction Information Services (AIS) as defined by the OBIE Read/Write API Standard
+    - FAPI-secured (OAuth2/OIDC, mutual-TLS, PSD2 strong customer authentication). Represented here as
+    the shared OBIE standard; Skipton ASPSP publication is unverified (see review.yml).
   humanURL: https://openbankinguk.github.io/read-write-api-site3/
   tags:
   - Account Information
@@ -102,10 +81,9 @@ apis:
 - aid: skipton-building-society:skipton-payment-initiation-api
   name: Skipton Payment Initiation API (OBIE Read/Write Standard)
   description: >-
-    Payment Initiation Services (PIS) as defined by the OBIE Read/Write API
-    Standard - FAPI-secured (OAuth2/OIDC, mutual-TLS, PSD2 SCA). Represented
-    here as the shared OBIE standard; Skipton ASPSP publication is unverified
-    (see review.yml).
+    Payment Initiation Services (PIS) as defined by the OBIE Read/Write API Standard - FAPI-secured (OAuth2/OIDC,
+    mutual-TLS, PSD2 SCA). Represented here as the shared OBIE standard; Skipton ASPSP publication is
+    unverified (see review.yml).
   humanURL: https://openbankinguk.github.io/read-write-api-site3/
   tags:
   - Payment Initiation
@@ -118,10 +96,9 @@ apis:
 - aid: skipton-building-society:skipton-confirmation-of-funds-api
   name: Skipton Confirmation of Funds API (OBIE Read/Write Standard)
   description: >-
-    Confirmation of Funds Services (CBPII) as defined by the OBIE Read/Write API
-    Standard - FAPI-secured (OAuth2/OIDC, mutual-TLS, PSD2 SCA). Represented here
-    as the shared OBIE standard; Skipton ASPSP publication is unverified (see
-    review.yml).
+    Confirmation of Funds Services (CBPII) as defined by the OBIE Read/Write API Standard - FAPI-secured
+    (OAuth2/OIDC, mutual-TLS, PSD2 SCA). Represented here as the shared OBIE standard; Skipton ASPSP publication
+    is unverified (see review.yml).
   humanURL: https://openbankinguk.github.io/read-write-api-site3/
   tags:
   - Confirmation of Funds
@@ -131,6 +108,84 @@ apis:
     url: https://openbankinguk.github.io/read-write-api-site3/
   - type: APIReference
     url: https://github.com/OpenBankingUK/read-write-api-specs
+- aid: skipton-building-society:skipton-building-society-atm-api
+  name: Skipton Building Society ATM API
+  description: Endpoint for getting ATM data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  tags:
+  - ATM
+  properties:
+  - type: OpenAPI
+    url: openapi/skipton-building-society-atm-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+- aid: skipton-building-society:skipton-building-society-bca-api
+  name: Skipton Building Society BCA API
+  description: Endpoint for getting Business Current Account data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  tags:
+  - BCA
+  properties:
+  - type: OpenAPI
+    url: openapi/skipton-building-society-bca-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+- aid: skipton-building-society:skipton-building-society-branch-api
+  name: Skipton Building Society Branch API
+  description: Endpoint for getting Branch data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  tags:
+  - Branch
+  properties:
+  - type: OpenAPI
+    url: openapi/skipton-building-society-branch-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+- aid: skipton-building-society:skipton-building-society-ccc-api
+  name: Skipton Building Society CCC API
+  description: Endpoint for getting Commercial Credit Card data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  tags:
+  - CCC
+  properties:
+  - type: OpenAPI
+    url: openapi/skipton-building-society-ccc-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+- aid: skipton-building-society:skipton-building-society-pca-api
+  name: Skipton Building Society PCA API
+  description: Endpoint for getting Personal Current Account data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  tags:
+  - PCA
+  properties:
+  - type: OpenAPI
+    url: openapi/skipton-building-society-pca-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
+- aid: skipton-building-society:skipton-building-society-sme-api
+  name: Skipton Building Society SME API
+  description: Endpoint for getting Unsecured SME Loan data
+  humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  tags:
+  - SME
+  properties:
+  - type: OpenAPI
+    url: openapi/skipton-building-society-sme-api-openapi.yml
+  - type: Documentation
+    url: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
+  - type: APIReference
+    url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
 common:
 - type: DomainSecurity
   url: security/skipton-building-society-domain-security.yml
