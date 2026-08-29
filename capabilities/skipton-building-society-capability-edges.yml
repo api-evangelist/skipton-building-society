@@ -1,0 +1,54 @@
+slug: skipton-building-society
+provider: Skipton Building Society
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Banking & Capital Markets
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: ATM
+  spec_file: skipton-building-society-atm-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.75
+  evidence: tag "ATM"; "Open Data ATM API"; GET /atms
+  reason: UK Open Banking/Open Data ATM endpoint publishing the society's ATM estate (locations, services).
+    ATM estate information is part of banking channel operations, hence Banking Channels Management. Confidence
+    moderated because the spec gives no schema detail.
+- tag: Branch
+  spec_file: skipton-building-society-branch-api-openapi.yml
+  capability_id: BC-1300.50
+  capability_id_l1: BC-1300
+  capability_name: Banking Channels Management
+  confidence: 0.75
+  evidence: GET /branches — "Open Data Branch API"
+  reason: Open Data branch-locator endpoint exposing the branch network. Branch network information belongs
+    to Banking Channels Management.
+- tag: BCA
+  spec_file: skipton-building-society-bca-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.7
+  evidence: GET /business-current-accounts — "Open Data BCA API"
+  reason: Open Data product reference endpoint publishing the bank's business current account product
+    range (terms, rates, eligibility). That is publication of the banking product catalogue rather than
+    servicing of an individual customer's account, so Product Catalogue Management. Some ambiguity vs.
+    Deposit Account Management.
+- tag: PCA
+  spec_file: skipton-building-society-pca-api-openapi.yml
+  capability_id: BC-1310.10
+  capability_id_l1: BC-1310
+  capability_name: Product Catalogue Management
+  confidence: 0.7
+  evidence: GET /personal-current-accounts — "Open Data PCA API"
+  reason: 'Open Data personal current account product endpoint: publishes the product master/terms for
+    PCAs, i.e. banking product catalogue rather than individual account servicing.'

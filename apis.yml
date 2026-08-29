@@ -199,6 +199,9 @@ apis:
   - type: APIReference
     url: https://github.com/OpenBankingUK/opendata-api-spec-compiled
 common:
+- type: CapabilityMap
+  url: capabilities/skipton-building-society-capability-edges.yml
+  name: Skipton Building Society Business Capability Map
 - type: DomainSecurity
   url: security/skipton-building-society-domain-security.yml
 - type: Website
