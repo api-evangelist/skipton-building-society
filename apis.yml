@@ -22,6 +22,18 @@ description: >-
   Open Banking API entries below are represented as the shared OBIE standard the
   society would conform to if it published these surfaces, and are explicitly
   unverified for Skipton.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
