@@ -1,0 +1,30 @@
+{
+  "provider": "skipton-building-society",
+  "sources": [
+    "_original/obie-opendata-openapi.json"
+  ],
+  "outputs": [
+    "skipton-building-society-atm-api-openapi.yml",
+    "skipton-building-society-bca-api-openapi.yml",
+    "skipton-building-society-branch-api-openapi.yml",
+    "skipton-building-society-ccc-api-openapi.yml",
+    "skipton-building-society-pca-api-openapi.yml",
+    "skipton-building-society-sme-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "obie-opendata-openapi.json: upgraded swagger 2.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "skipton-building-society-atm-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "skipton-building-society-bca-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "skipton-building-society-branch-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "skipton-building-society-ccc-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "skipton-building-society-pca-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "skipton-building-society-sme-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}

@@ -2,10 +2,10 @@ overlay: 1.0.0
 info:
   title: API Evangelist enhancements for Skipton Building Society (OBIE Open Data)
   version: 1.0.0
-generated: '2026-07-23'
-method: generated
+x-generated: '2026-07-23'
+x-method: generated
 extends: openapi/obie-opendata-openapi.json
-note: >-
+x-note: >-
   Non-mutating overlay recording API Evangelist annotations over the shared OBIE
   Open Data standard spec harvested into this repo. The underlying spec is the
   OpenBankingUK Open Data standard, unverified for Skipton (see review.yml).
