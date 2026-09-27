@@ -48,7 +48,7 @@ accessModel:
   method: manual
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
-- Financial-Services
+- Financial Services
 - Banking
 - Building Society
 - Open Banking
@@ -71,6 +71,7 @@ tags_raw:
 - Savings
 - Account Information
 - Payments
+- Financial-Services
 created: '2026-07-23'
 modified: '2026-07-23'
 specificationVersion: '0.23'
@@ -190,6 +191,8 @@ apis:
   description: Endpoint for getting Unsecured SME Loan data
   humanURL: https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/
   tags:
+  - Small Business
+  tags_raw:
   - SME
   properties:
   - type: OpenAPI
