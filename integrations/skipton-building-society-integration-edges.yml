@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/skipton-building-society/integrations
+- https://n8n.io/integrations/skipton-building-society/
+- https://composio.dev/toolkits/skipton-building-society
+- https://monid.ai/tools/skipton-building-society
+checked:
+- https://composio.dev/toolkits/skipton-building-society
+- https://monid.ai/tools/skipton-building-society
+- https://n8n.io/integrations/skipton-building-society/
+- https://zapier.com/apps/skipton-building-society/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
